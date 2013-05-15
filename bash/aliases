@@ -22,19 +22,20 @@ alias bx="b exec"
 
 # git aliases
 alias g="git"
+alias ga="g add ."
+alias gaa="g add -A"
 alias gb="g branch"
 alias gba="g branch -a"
 alias gc="g checkout"
+alias gf="g fetch"
 alias gs="g status"
 alias pop="g stash pop"
 alias stash="g stash"
 
 # textmate aliases
 alias m="mate -w ."
-alias m2="mate2 -w ."
-
-alias recompile="bx thor proto:clean --force; bx thor proto:compile"
 
 # misc
+alias derp='PB_IGNORE_DEPRECATIONS=1'
 alias path='echo $PATH'
 alias reload='. ~/.bash_profile'
