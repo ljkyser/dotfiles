@@ -1,6 +1,9 @@
 # Changing directory to code project
 function c { cd $PROJECT_PATH/$1; }
 
+# Changing directory to code project
+function d { cd $PROJECT_PATH/deploys/$1; }
+
 # Search through the whole codebase
 function hunt { find $PROJECT_PATH -type f -name "$1" -not -path "*vendor*" -print0 | xargs -0 ack -Q $2; }
 
@@ -49,14 +52,8 @@ function downstream {
   git cherry -v master qa;
   echo '[stage > qa]';
   git cherry -v qa stage;
-  echo '[int > stage]';
-  git cherry -v stage int;
   echo '[stable > stage]';
   git cherry -v stage stable;
-  echo '[stable > int]';
-  git cherry -v int stable;
-  echo '[stable > master]';
-  git cherry -v master stable;
 }
 
 # Upstream branch check
@@ -66,13 +63,21 @@ function upstream {
   git cherry -v qa master;
   echo '[qa > stage]';
   git cherry -v stage qa;
-  echo '[stage > int]';
-  git cherry -v int stage;
   echo '[stage > stable]';
   git cherry -v stable stage;
 }
 
-# Switch to Ruby 2 with a gemset of the current directory
+# Switch to latest JRuby with a gemset of the current directory
+function jrb {
+  rvm use jruby@${PWD##*/} --create
+}
+
+# Switch to Ruby 2.1 with a gemset of the current directory
 function rb {
-  rvm use ruby-2.0.0-p0@${PWD##*/}
+  rvm use 2.1.2@${PWD##*/} --create
+}
+
+# Switch to Ruby version specified in the current directory
+function localrb {
+  rvm use .
 }

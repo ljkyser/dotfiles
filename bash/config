@@ -1,3 +1,6 @@
+# Setup the path
+PATH=$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+
 # Export some environment variables
 export EDITOR=vim
 export ARCHFLAGS="-arch x86_64"
@@ -8,6 +11,7 @@ export JRUBY_OPTS="-Xcext.enabled=true"
 source ~/.bash/colors
 source ~/.bash/completions
 source ~/.bash/functions
+source ~/.bash/aliases
 
 # Map keys for better navigation
 bind '"\e\e[D": backward-word'
@@ -16,4 +20,4 @@ bind '"\e[1;2H": beginning-of-line'
 bind '"\e[1;2F": end-of-line'
 
 # Setup the prompt
-PS1="$BRIGHT_BLACK\h $CYAN \w$BRIGHT_RED \$(parse_git_branch)$WHITE ∴ "
+PS1="$BRIGHT_BLACK\h $CYAN \w$BRIGHT_VIOLET \$(parse_git_branch)$WHITE ∴ "

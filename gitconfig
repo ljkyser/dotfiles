@@ -1,0 +1,12 @@
+[user]
+	name = Adam Hutchison
+	email = liveh2o@gmail.com
+[push]
+	default = simple
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/ah/.gitignore_global
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
