@@ -7,19 +7,6 @@ alias o="open ."
 # the "kp" alias ("que pasa"), in honor of tony p.
 alias kp="ps auxwww"
 
-# bundler aliases
-alias b="bundle"
-alias bc="b console"
-alias bi="b install"
-alias biv="bi --path vendor && echo 'vendor/ruby' >> .gitignore"
-alias bivp="biv && bp"
-alias bl="b list"
-alias bo="EDITOR=atom b open"
-alias bout="b outdated"
-alias bp="b package"
-alias bu="b update"
-alias bx="b exec"
-
 # git aliases
 alias g="git"
 alias ga="g add"
@@ -34,6 +21,7 @@ alias glo="gl --oneline"
 alias gs="g status"
 alias pop="g stash pop"
 alias stash="g stash"
+alias glc="gl -1 HEAD"
 
 # editor aliases
 alias a="atom ."
@@ -41,16 +29,9 @@ alias m="mate -w ."
 
 # misc
 alias dotfiles='cd ~/.dotfiles'
-alias derp='PB_IGNORE_DEPRECATIONS=1'
-alias lrb='localrb'
-alias jitless='JRUBY_OPTS="$JRUBY_OPTS -J-Djruby.compile.mode=OFF"'
-alias jrbdev='JRUBY_OPTS="$JRUBY_OPTS --dev"'
 alias ns='nslookup'
 alias path='echo $PATH'
-alias redis='redis-server /usr/local/etc/redis.conf'
 alias reload='. ~/.bash_profile'
-alias turbo='jrbdev derp'
-alias zmq='PB_CLIENT_TYPE=zmq PB_SERVER_TYPE=zmq'
 
 if [ `uname` == 'Darwin' ]; then
   alias ls="ls -G"
